@@ -7,7 +7,7 @@ body, html {
 }
 
 .bgimg {
-    background-image: url('bgimg.jpg');
+    background-image: url('background.png');
     height: 100%;
     background-position: center;
     background-size: cover;
@@ -16,7 +16,16 @@ body, html {
     font-family: "Courier New", Courier, monospace;
     font-size: 25px;
 }
-
+	.logo{
+    background-image: url('blue logo.png');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+	}
 .topleft {
     position: absolute;
     top: 0;
@@ -32,25 +41,55 @@ body, html {
 .middle {
     position: absolute;
     top: 50%;
-    left: 60%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+	
+
+}
+	.middle #coming{	
+		width: 1000px;
+	max-width: 700px;
+	font:  30px 'Droid Sans', Arial, sans-serif;
+	text-align: center;
+		color:F6A500;
+		text-shadow: 0px, 1px, 10px, #000000;
+	}
+	.middle #demo{
+	position: relative;
+	z-index: 1;
+}
+	
+
+.middle #demo > span{
+	width: 72px;
+	max-width: 92px;
+	font: bold 30px 'Droid Sans', Arial, sans-serif;
+	text-align: center;
+	border-radius: 3px;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.7);
+	margin: 0 7px;
+	padding: 10px 0;
+	display: inline-block;
+	position: relative;
 }
 
 hr {
     margin: auto;
     width: 40%;
 }
+#coming {
+}
 </style>
 <body>
 
 <div class="bgimg">
+  <div class="logo"></div>
   <div class="topleft">
     <p>Petrichor, IIT Palakkad</p>
   </div>
   <div class="middle">
-    <h1>COMING SOON</h1>
-    <hr>
+    <h1 id="coming">COMING SOON</h1>
     <p id="demo"></p>
 <script>
 // Set the date we're counting down to
@@ -72,9 +111,7 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-    + minutes + "m " + seconds + "s ";
-    
+    document.getElementById("demo").innerHTML =  "<span>" + days +"d" + "</span><span>" + hours + "h" + "</span><span>" + minutes +"m"+ "</span><span>" + seconds +"s" + "</span>";
     // If the count down is over, write some text 
     if (distance < 0) {
         clearInterval(x);
@@ -90,3 +127,5 @@ var x = setInterval(function() {
 
 </body>
 </html>
+
+
